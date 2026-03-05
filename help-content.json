@@ -1,0 +1,126 @@
+{
+    "title": "Handleiding {{APP_NAME}}",
+    "subtitle": "Stel je vragen gerust ook direct aan {{APP_NAME}} \u2014 de chatbot kent deze handleiding.",
+    "sections": [
+        {
+            "id": "sec1",
+            "emoji": "\uD83D\uDCD6",
+            "title": "Wat is {{APP_NAME}}?",
+            "content": "<h2 class=\"ho-chapter-title\">Wat is {{APP_NAME}}?</h2>",
+            "items": [
+                {
+                    "id": "sec1a",
+                    "emoji": "\uD83E\uDD14",
+                    "title": "Over {{APP_NAME}}",
+                    "content": "<div class=\"text-sm mb-2\">{{APP_NAME}} is de AI-chatassistent van jouw organisatie. Stel vragen, krijg ondersteuning bij je werk, en gebruik AI op een verantwoorde manier.</div>"
+                },
+                {
+                    "id": "sec1b",
+                    "emoji": "\uD83D\uDCA1",
+                    "title": "Wat kun je ermee?",
+                    "content": "<ul class=\"list-disc pl-5 space-y-1 text-sm mb-2\"><li>Vragen stellen over beleid, procedures en praktische zaken</li><li>Teksten samenvatten of herschrijven</li><li>Idee\u00ebn genereren of brainstormen</li><li>Stapsgewijs uitleg krijgen over complexe onderwerpen</li></ul>"
+                },
+                {
+                    "id": "sec1c",
+                    "emoji": "\u26A0\uFE0F",
+                    "title": "De kennisgrens",
+                    "content": "<div class=\"bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-2 rounded\"><b>Let op:</b> Controleer altijd het antwoord, vooral bij actuele of specifieke onderwerpen. AI kan fouten maken of informatie verzinnen (\"hallucineren\").</div>"
+                }
+            ]
+        },
+        {
+            "id": "sec2",
+            "emoji": "\uD83D\uDD11",
+            "title": "Toegang",
+            "content": "<h2 class=\"ho-chapter-title\">Toegang tot {{APP_NAME}}</h2>",
+            "items": [
+                {
+                    "id": "sec2a",
+                    "emoji": "\uD83D\uDCBB",
+                    "title": "Installatie",
+                    "content": "<ul class=\"list-disc pl-5 space-y-1 text-sm mb-2\"><li><b>In je browser:</b> Ga naar de URL en log in met je werkaccount.</li><li><b>Als app op je pc:</b> Voeg toe via je browser (bijv. Edge: Instellingen \u2192 Apps \u2192 Deze site als app installeren).</li><li><b>Op je telefoon:</b> Open de URL in je browser en voeg toe aan je startscherm.</li></ul>"
+                }
+            ]
+        },
+        {
+            "id": "sec3",
+            "emoji": "\uD83D\uDCCB",
+            "title": "Spelregels",
+            "content": "<h2 class=\"ho-chapter-title\">Spelregels</h2>",
+            "items": [
+                {
+                    "id": "sec3a",
+                    "emoji": "\u2705",
+                    "title": "Richtlijnen",
+                    "content": "<div class=\"bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-4 rounded\"><ol class=\"list-decimal pl-5 space-y-2 text-sm\"><li><b>Gebruik {{APP_NAME}} voor je werk</b> \u2014 niet openbare chatbots.</li><li><b>Jij bent verantwoordelijk</b> \u2014 AI is een hulpmiddel, geen vervanging.</li><li><b>Controleer altijd de antwoorden</b> \u2014 AI kan fouten maken.</li><li><b>Deel geen gevoelige informatie</b> met openbare chatbots.</li><li><b>Deel geen bijzondere persoonsgegevens</b> \u2014 ook niet in {{APP_NAME}}.</li></ol></div>"
+                }
+            ]
+        },
+        {
+            "id": "sec4",
+            "emoji": "\uD83D\uDE80",
+            "title": "Aan de slag",
+            "content": "<h2 class=\"ho-chapter-title\">Aan de slag</h2>",
+            "items": [
+                {
+                    "id": "sec4a",
+                    "emoji": "\uD83D\uDCAC",
+                    "title": "Chatten",
+                    "content": "<div class=\"text-sm mb-2\">Stel je vragen direct in het chatveld. Hoe concreter je vraag, hoe beter het antwoord.</div>"
+                },
+                {
+                    "id": "sec4b",
+                    "emoji": "\uD83D\uDCCE",
+                    "title": "Bestanden uploaden",
+                    "content": "<div class=\"text-sm mb-2\">Je kunt documenten of afbeeldingen toevoegen via het <b>+</b> icoon linksonder in het invoerveld.</div>"
+                },
+                {
+                    "id": "sec4c",
+                    "emoji": "\uD83C\uDFAF",
+                    "title": "Tips voor goede vragen",
+                    "content": "<ul class=\"list-disc pl-5 space-y-1 text-sm mb-2\"><li><b>Wees concreet:</b> Omschrijf duidelijk wat je wilt.</li><li><b>Geef context:</b> Deel relevante achtergrondinformatie.</li><li><b>Geef het gewenste formaat aan:</b> Lijst, tabel, samenvatting?</li><li><b>Splits complexe vragen op</b> in deelvragen.</li><li><b>Vraag door</b> als het antwoord niet compleet is.</li></ul>"
+                }
+            ]
+        },
+        {
+            "id": "sec5",
+            "emoji": "\u2753",
+            "title": "Veelgestelde vragen",
+            "content": "<h2 class=\"ho-chapter-title\">Veelgestelde vragen</h2>",
+            "items": [
+                {
+                    "id": "sec5a",
+                    "emoji": "\uD83D\uDD12",
+                    "title": "Hoe veilig is het?",
+                    "content": "<div class=\"text-sm mb-2\">{{APP_NAME}} draait binnen een beveiligde omgeving. Alle communicatie wordt vertrouwelijk behandeld.</div>"
+                },
+                {
+                    "id": "sec5b",
+                    "emoji": "\uD83D\uDD04",
+                    "title": "De chat blijft hangen",
+                    "content": "<div class=\"text-sm mb-2\">Druk op <b>F5</b> (browser) of <b>Ctrl+R</b> (app) om te vernieuwen. Op je telefoon: sluit de app en start opnieuw.</div>"
+                },
+                {
+                    "id": "sec5c",
+                    "emoji": "\uD83E\uDDE0",
+                    "title": "Leert het van mijn gesprekken?",
+                    "content": "<div class=\"text-sm mb-2\">Nee. {{APP_NAME}} onthoudt geen informatie uit eerdere gesprekken. Binnen een chatsessie wordt de historie wel bijgehouden.</div>"
+                }
+            ]
+        },
+        {
+            "id": "sec6",
+            "emoji": "\uD83D\uDCDE",
+            "title": "Hulp en contact",
+            "content": "<h2 class=\"ho-chapter-title\">Hulp en contact</h2>",
+            "items": [
+                {
+                    "id": "sec6a",
+                    "emoji": "\uD83D\uDCE7",
+                    "title": "Probleem melden",
+                    "content": "<div class=\"text-sm mb-2\">Loop je tegen een probleem aan? Neem contact op met je ICT-afdeling of beheerder.</div>"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,470 @@
+/**
+ * Open WebUI Help Overlay - custom.css
+ *
+ * Styles for the floating help button and modal.
+ * Place this file at /app/build/static/custom.css in your Docker image.
+ */
+
+/* ── Floating button ──────────────────────────────────────────────── */
+
+#ho-float-btn {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 9990;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+  /* Light mode */
+  background: #111;
+  color: #fff;
+}
+
+#ho-float-btn:hover {
+  background: #333;
+  transform: scale(1.08);
+}
+
+/* Dark mode */
+.dark #ho-float-btn {
+  background: #fff;
+  color: #111;
+}
+.dark #ho-float-btn:hover {
+  background: #e5e5e5;
+}
+
+/* Hide on small screens (< 1024px) to avoid overlapping chat input */
+@media (max-width: 1023px) {
+  #ho-float-btn {
+    display: none;
+  }
+}
+
+/* ── Backdrop ─────────────────────────────────────────────────────── */
+
+#ho-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+/* ── Modal ────────────────────────────────────────────────────────── */
+
+#ho-modal {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: ho-fade-in 0.15s ease-out;
+}
+
+#ho-modal.ho-modal-lg {
+  width: 90vw;
+  max-width: 900px;
+  height: 80vh;
+  max-height: 700px;
+}
+
+#ho-modal.ho-modal-full {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  border-radius: 0;
+}
+
+@keyframes ho-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Dark mode */
+.dark #ho-modal {
+  background: #1e1e2e;
+  color: #d4d4d8;
+}
+
+/* ── Header ───────────────────────────────────────────────────────── */
+
+.ho-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px 0;
+  flex-shrink: 0;
+}
+
+.ho-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #111;
+}
+.dark .ho-title {
+  color: #e5e5e5;
+}
+
+.ho-info-icon {
+  width: 22px;
+  height: 22px;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.ho-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ho-header-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  transition: background 0.12s;
+}
+.ho-header-actions button:hover {
+  background: #f3f4f6;
+}
+.dark .ho-header-actions button {
+  color: #a1a1aa;
+}
+.dark .ho-header-actions button:hover {
+  background: #2d2d3f;
+}
+
+/* ── Subtitle ─────────────────────────────────────────────────────── */
+
+.ho-subtitle {
+  padding: 4px 20px 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+.dark .ho-subtitle {
+  color: #71717a;
+}
+
+/* ── Body (sidebar + content) ─────────────────────────────────────── */
+
+.ho-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding-top: 12px;
+  overflow: hidden;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────────── */
+
+.ho-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  padding: 0 8px 0 20px;
+  border-right: 1px solid #e5e7eb;
+}
+.dark .ho-sidebar {
+  border-right-color: #3f3f50;
+}
+
+.ho-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ho-nav-item {
+  margin-bottom: 2px;
+}
+
+.ho-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.12s;
+  user-select: none;
+}
+.ho-nav-link:hover {
+  background: #eff6ff;
+}
+.ho-nav-link.ho-active {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+.dark .ho-nav-link {
+  color: #d4d4d8;
+}
+.dark .ho-nav-link:hover {
+  background: #2d2d3f;
+}
+.dark .ho-nav-link.ho-active {
+  background: #1e3a5f;
+  color: #93c5fd;
+}
+
+.ho-nav-link.ho-sub {
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 4px 8px;
+}
+
+.ho-nav-chevron {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+  transition: transform 0.15s;
+  cursor: pointer;
+}
+.ho-nav-chevron.ho-open {
+  transform: rotate(90deg);
+}
+
+.ho-subnav {
+  margin-left: 24px;
+  padding-left: 12px;
+  border-left: 2px solid #bfdbfe;
+  margin-top: 4px;
+}
+.dark .ho-subnav {
+  border-left-color: #1e3a5f;
+}
+
+/* Hide sidebar on small screens */
+@media (max-width: 767px) {
+  .ho-sidebar {
+    display: none;
+  }
+}
+
+/* ── Content area ─────────────────────────────────────────────────── */
+
+.ho-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 24px 16px 16px;
+  min-width: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.ho-section {
+  margin-bottom: 24px;
+}
+
+/* Content typography */
+.ho-content h2,
+.ho-chapter-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #111;
+}
+.dark .ho-content h2,
+.dark .ho-chapter-title {
+  border-bottom-color: #3f3f50;
+  color: #e5e5e5;
+}
+
+.ho-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #1f2937;
+}
+.dark .ho-section-title {
+  color: #d4d4d8;
+}
+
+.ho-content p,
+.ho-content div {
+  margin-bottom: 8px;
+}
+
+.ho-content ul,
+.ho-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.ho-content li {
+  margin-bottom: 4px;
+}
+
+/* Info/warning boxes from help content */
+.ho-content .bg-yellow-50,
+.ho-content .bg-yellow-100 {
+  background: #fefce8;
+  border-left: 4px solid #eab308;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.dark .ho-content .bg-yellow-50,
+.dark .ho-content .bg-yellow-100 {
+  background: #3b3520;
+  border-left-color: #ca8a04;
+}
+
+/* Support Tailwind-style classes that may appear in help content */
+.ho-content .text-sm {
+  font-size: 0.875rem;
+}
+.ho-content .mb-2 {
+  margin-bottom: 0.5rem;
+}
+.ho-content .mb-4 {
+  margin-bottom: 1rem;
+}
+.ho-content .space-y-1 > * + * {
+  margin-top: 0.25rem;
+}
+.ho-content .space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+.ho-content .pl-5 {
+  padding-left: 1.25rem;
+}
+.ho-content .list-disc {
+  list-style-type: disc;
+}
+.ho-content .list-decimal {
+  list-style-type: decimal;
+}
+.ho-content .p-4 {
+  padding: 1rem;
+}
+.ho-content .rounded {
+  border-radius: 0.375rem;
+}
+.ho-content .border-l-4 {
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+.ho-content .border-yellow-400 {
+  border-left-color: #facc15;
+}
+.ho-content .border-yellow-500 {
+  border-left-color: #eab308;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────── */
+
+.ho-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px 14px;
+  flex-shrink: 0;
+  border-top: 1px solid #e5e7eb;
+}
+.dark .ho-footer {
+  border-top-color: #3f3f50;
+}
+
+.ho-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #4b5563;
+  cursor: pointer;
+  user-select: none;
+}
+.dark .ho-checkbox-label {
+  color: #a1a1aa;
+}
+
+.ho-checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.ho-btn-primary {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.ho-btn-primary:hover {
+  background: #333;
+}
+.dark .ho-btn-primary {
+  background: #fff;
+  color: #111;
+}
+.dark .ho-btn-primary:hover {
+  background: #e5e5e5;
+}
+
+/* ── Scrollbar styling ────────────────────────────────────────────── */
+
+.ho-content::-webkit-scrollbar,
+.ho-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.ho-content::-webkit-scrollbar-track,
+.ho-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.ho-content::-webkit-scrollbar-thumb,
+.ho-sidebar::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+.dark .ho-content::-webkit-scrollbar-thumb,
+.dark .ho-sidebar::-webkit-scrollbar-thumb {
+  background: #52525b;
+}

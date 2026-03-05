@@ -1,0 +1,24 @@
+# Docker Compose voor Open WebUI met Help Overlay
+#
+# Gebruik:
+#   docker compose up -d --build
+#
+# Open daarna: http://localhost:3000
+
+services:
+  open-webui:
+    build: .
+    ports:
+      - "3000:8080"
+    volumes:
+      - open-webui-data:/app/backend/data
+    environment:
+      # Pas de naam van je app aan — wordt gebruikt in {{APP_NAME}} placeholders
+      - WEBUI_NAME=MijnOrganisatie AI
+      # Optioneel: stel andere env vars in
+      # - OPENAI_API_BASE_URL=https://api.openai.com/v1
+      # - OPENAI_API_KEY=sk-...
+    restart: unless-stopped
+
+volumes:
+  open-webui-data:
