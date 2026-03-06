@@ -46,6 +46,7 @@ services:
       - GLOBAL_LOG_LEVEL=WARNING
       - USER_AGENT=openwebui
       - JWT_EXPIRES_IN=3600
+      - STATIC_DIR=/app/backend/static
     extra_hosts:
       - host.docker.internal:host-gateway
     restart: unless-stopped
