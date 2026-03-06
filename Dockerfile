@@ -15,6 +15,7 @@ FROM ghcr.io/open-webui/open-webui:main
 # Kopieer de overlay-bestanden naar de FRONTEND build directory.
 # Open WebUI kopieert bij startup alles van /app/build/static/ → werkende static dir.
 # Hierdoor overleven onze bestanden elke herstart.
-COPY loader.js       /app/build/static/loader.js
-COPY custom.css      /app/build/static/custom.css
+COPY loader.js         /app/build/static/loader.js
+COPY custom.css        /app/build/static/custom.css
 COPY help-content.json /app/build/static/help-content.json
+COPY apps.json         /app/build/static/apps.json
