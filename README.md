@@ -38,8 +38,8 @@ Ontwikkeld als onderdeel van [GovChat-NL](https://govchat.nl), het open-source A
 git clone https://github.com/MarjoleinVerP/open-webui-govchat-overlay.git
 cd open-webui-govchat-overlay
 
-# Start met docker compose (voorbeeld: Meierijstad configuratie)
-GOVCHAT_ADMIN_PASSWORD=mijnwachtwoord docker compose -f docker-compose.meierijstad.yaml up -d --build
+# Start met docker compose (productie-voorbeeld met alle services)
+GOVCHAT_ADMIN_PASSWORD=mijnwachtwoord docker compose -f docker-compose.govchat.yaml up -d --build
 ```
 
 Open daarna:
@@ -56,7 +56,7 @@ open-webui-help-overlay/
 ├── apps.json                     # Standaard apps config (fallback)
 ├── Dockerfile                    # Open WebUI + overlay bestanden
 ├── docker-compose.yaml           # Basis compose config
-├── docker-compose.meierijstad.yaml  # Productie config voor Meierijstad
+├── docker-compose.govchat.yaml    # Productie config (volledig voorbeeld)
 └── admin/
     ├── Dockerfile                # Admin panel image (node:20-alpine)
     ├── package.json
@@ -100,8 +100,8 @@ Beveiligd met een wachtwoord via de `GOVCHAT_ADMIN_PASSWORD` environment variabl
 |---|---|---|
 | `GOVCHAT_ADMIN_PASSWORD` | Wachtwoord voor het admin panel | `geheim123` |
 | `STATIC_DIR` | Open WebUI static directory (belangrijk!) | `/app/backend/static` |
-| `CORS_ORIGIN` | Toegestane origin voor API calls | `https://jip.meierijstad.nl` |
-| `WEBUI_NAME` | Naam van de applicatie | `GAIMS` |
+| `CORS_ALLOW_ORIGIN` | Toegestane origin voor API calls | `https://chat.organisatie.nl` |
+| `WEBUI_NAME` | Naam van de applicatie | `GovChat` |
 
 **Let op**: `STATIC_DIR=/app/backend/static` is vereist in de Open WebUI container zodat de overlay-bestanden correct worden geserveerd.
 
@@ -131,12 +131,9 @@ Dit project is onderdeel van **[GovChat-NL](https://govchat.nl)** — een initia
 
 GovChat-NL is een open-source AI-chatplatform specifiek ontwikkeld voor Nederlandse overheidsorganisaties. Het biedt een veilige, privacy-vriendelijke omgeving waarin ambtenaren kunnen werken met grote taalmodellen (LLMs), zonder dat gevoelige gegevens naar externe partijen gaan.
 
-### Deelnemende organisaties
+### Wie werken eraan?
 
-GovChat-NL wordt gebruikt en mede-ontwikkeld door meerdere Nederlandse gemeenten en provincies, waaronder:
-- Gemeente Meierijstad
-- Provincie Limburg
-- En andere overheidsorganisaties
+GovChat-NL is een samenwerkingsverband van Nederlandse overheidsorganisaties — gemeenten, provincies en andere publieke instellingen — die samen werken aan veilige en toegankelijke AI-tools.
 
 ### Meedoen of interesse?
 

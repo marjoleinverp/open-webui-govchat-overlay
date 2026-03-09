@@ -1,86 +1,58 @@
 {
-    "title": "Transparantieverklaring GAIMS",
-    "subtitle": "GAIMS (Generatieve AI Meierijstad) \u2014 de generatieve AI-tool voor medewerkers van gemeente Meierijstad.",
+    "title": "Handleiding {{APP_NAME}}",
+    "subtitle": "{{APP_NAME}} \u2014 de generatieve AI-tool voor jouw organisatie.",
     "sections": [
         {
             "id": "sec1",
             "emoji": "\uD83D\uDCD6",
-            "title": "Wat is GAIMS?",
-            "content": "<h2 class=\"ho-chapter-title\">Wat is GAIMS?</h2>",
+            "title": "Wat is {{APP_NAME}}?",
+            "content": "<h2 class=\"ho-chapter-title\">Wat is {{APP_NAME}}?</h2>",
             "items": [
                 {
                     "id": "sec1a",
                     "emoji": "\uD83E\uDD14",
-                    "title": "Over GAIMS",
-                    "content": "<div class=\"text-sm mb-2\">GAIMS (Generatieve AI Meierijstad) is de generatieve AI-tool voor jou als medewerker van gemeente Meierijstad. In deze transparantieverklaring leggen we uit wat GAIMS is, hoe het werkt, wat jij ermee kunt doen, welke rechten je hebt, en welke mogelijkheden de beheerder heeft.</div>"
+                    "title": "Over {{APP_NAME}}",
+                    "content": "<div class=\"text-sm mb-2\">{{APP_NAME}} is de generatieve AI-tool voor medewerkers van jouw organisatie. In deze handleiding leggen we uit wat {{APP_NAME}} is, hoe het werkt, wat jij ermee kunt doen en welke rechten je hebt.</div>"
                 },
                 {
                     "id": "sec1b",
                     "emoji": "\u2699\uFE0F",
-                    "title": "Hoe werkt GAIMS?",
-                    "content": "<div class=\"text-sm mb-2\">GAIMS maakt gebruik van kunstmatige intelligentie (AI) om je vragen te beantwoorden en hulp te bieden. Het heeft geen directe verbinding met internet, dus het is geen zoekmachine.</div><div class=\"text-sm mb-2\">GAIMS analyseert tekst en genereert antwoorden op basis van jouw input. Het werkt digitaal en kan tekst of tabellen produceren, maar geen bestanden maken. GAIMS reageert via duidelijke en toegankelijke communicatie en streeft altijd naar professionele dienstverlening. Je kunt vragen direct stellen via tekst en GAIMS zal met een duidelijk en persoonlijk antwoord komen.</div><div class=\"bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-2 rounded\"><b>Let op:</b> GAIMS kan ook fouten maken, zoals onvolledige informatie geven of verkeerde verbanden leggen. Controleer de antwoorden van GAIMS dus altijd, voordat je ze verder gebruikt. GAIMS is getraind op webdata tot oktober 2023 \u2014 controleer dus ook altijd of antwoorden actueel en juist zijn.</div>"
+                    "title": "Hoe werkt het?",
+                    "content": "<div class=\"text-sm mb-2\">{{APP_NAME}} maakt gebruik van kunstmatige intelligentie (AI) om je vragen te beantwoorden en hulp te bieden. Het analyseert tekst en genereert antwoorden op basis van jouw input.</div><div class=\"bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-2 rounded\"><b>Let op:</b> AI kan ook fouten maken, zoals onvolledige informatie geven of verkeerde verbanden leggen. Controleer de antwoorden dus altijd voordat je ze verder gebruikt.</div>"
                 },
                 {
                     "id": "sec1c",
                     "emoji": "\uD83D\uDCA1",
                     "title": "Wat kun jij ermee?",
-                    "content": "<div class=\"text-sm mb-2\">Je kan GAIMS gebruiken in jouw werk, bijvoorbeeld voor:</div><ul class=\"list-disc pl-5 space-y-1 text-sm mb-2\"><li><b>Advies en informatie:</b> Bijvoorbeeld zoeken naar of verduidelijken van wetten, richtlijnen, of processen.</li><li><b>Tekstondersteuning:</b> Het opstellen van korte teksten, tabellen, en verslagen.</li><li><b>Klare taal en toegankelijkheid:</b> Ondersteuning bij het formuleren van boodschappen in begrijpelijke taal.</li><li><b>Persoonlijke assistentie:</b> Vraag gerichte ondersteuning bij jouw dagelijkse werkzaamheden.</li></ul><div class=\"bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-2 rounded\"><b>Belangrijk:</b> Jij blijft als medewerker altijd zelf verantwoordelijk voor jouw werk. Gebruik output van GAIMS nooit direct als eindproduct, maar controleer altijd de juistheid en volledigheid.</div>"
+                    "content": "<div class=\"text-sm mb-2\">Je kunt {{APP_NAME}} gebruiken in jouw werk, bijvoorbeeld voor:</div><ul class=\"list-disc pl-5 space-y-1 text-sm mb-2\"><li><b>Advies en informatie:</b> Verduidelijken van wetten, richtlijnen of processen.</li><li><b>Tekstondersteuning:</b> Het opstellen van teksten, tabellen en verslagen.</li><li><b>Klare taal:</b> Ondersteuning bij het formuleren van boodschappen in begrijpelijke taal.</li><li><b>Persoonlijke assistentie:</b> Gerichte ondersteuning bij dagelijkse werkzaamheden.</li></ul><div class=\"bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-2 rounded\"><b>Belangrijk:</b> Jij blijft als medewerker altijd zelf verantwoordelijk voor jouw werk. Controleer altijd de juistheid en volledigheid van de output.</div>"
                 }
             ]
         },
         {
             "id": "sec2",
-            "emoji": "\uD83D\uDD11",
-            "title": "Toegang",
-            "content": "<h2 class=\"ho-chapter-title\">Toegang tot GAIMS</h2>",
-            "items": [
-                {
-                    "id": "sec2a",
-                    "emoji": "\uD83C\uDF93",
-                    "title": "Voorwaarden",
-                    "content": "<div class=\"text-sm mb-2\">Om gebruik te maken van GAIMS, is het noodzakelijk dat je eerst de <b>e-learning AI-Geletterdheid</b> volgt in ons leerportaal De Samenscholing. Binnen 24 uur na het afronden van deze training krijg je automatisch toegang tot GAIMS.</div><div class=\"text-sm mb-2\"><a href=\"https://visma-raet.plusport.com/scripts/user/trainingregistration/catalogueV2.aspx?_tra_id=227860\" target=\"_blank\" style=\"color: #2563eb; text-decoration: underline;\">Ga naar de e-learning AI-Geletterdheid in De Samenscholing \u2192</a></div>"
-                }
-            ]
-        },
-        {
-            "id": "sec3",
             "emoji": "\uD83D\uDD12",
             "title": "Gegevens en privacy",
             "content": "<h2 class=\"ho-chapter-title\">Gegevens en privacy</h2>",
             "items": [
                 {
-                    "id": "sec3a",
+                    "id": "sec2a",
                     "emoji": "\uD83D\uDCC1",
-                    "title": "Welke gegevens verwerkt GAIMS?",
-                    "content": "<div class=\"text-sm mb-2\">Om je toegang te geven tot GAIMS worden je <b>naam</b> en <b>e-mailadres</b> van de gemeente gebruikt. Daarnaast wordt GAIMS gekoppeld aan de rechten en rollen die jij als medewerker hebt, zodat het aansluit bij jouw werkzaamheden.</div><div class=\"text-sm mb-2\">GAIMS draait volledig op onze eigen digitale omgeving. Jouw persoonsgegevens worden dus niet gedeeld met andere partijen en beveiligd volgens onze eigen standaarden.</div><div class=\"bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-2 rounded\"><b>Belangrijk:</b> GAIMS is <b>niet zelflerend</b>. De inhoud van specifieke gesprekken wordt niet gekoppeld aan jou als gebruiker. Alle vragen en antwoorden zijn sessiegebonden. Start je een nieuw gesprek met GAIMS, dan wordt informatie uit eerdere gesprekken dus niet opnieuw gebruikt.</div>"
+                    "title": "Welke gegevens worden verwerkt?",
+                    "content": "<div class=\"text-sm mb-2\">Om je toegang te geven worden je <b>naam</b> en <b>e-mailadres</b> gebruikt. {{APP_NAME}} draait op de eigen digitale omgeving van jouw organisatie. Persoonsgegevens worden niet gedeeld met externe partijen.</div><div class=\"bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-2 rounded\"><b>Belangrijk:</b> {{APP_NAME}} is <b>niet zelflerend</b>. Alle vragen en antwoorden zijn sessiegebonden. Start je een nieuw gesprek, dan wordt informatie uit eerdere gesprekken niet opnieuw gebruikt.</div>"
                 }
             ]
         },
         {
-            "id": "sec4",
+            "id": "sec3",
             "emoji": "\u2696\uFE0F",
             "title": "Jouw rechten",
             "content": "<h2 class=\"ho-chapter-title\">Jouw rechten als gebruiker</h2>",
             "items": [
                 {
-                    "id": "sec4a",
+                    "id": "sec3a",
                     "emoji": "\uD83D\uDEE1\uFE0F",
                     "title": "Rechten",
-                    "content": "<ul class=\"list-disc pl-5 space-y-2 text-sm mb-2\"><li><b>Gegevensbeveiliging:</b> Jouw gesprekken en data blijven volledig intern binnen Meierijstad.</li><li><b>Controle over input:</b> Je bepaalt zelf wat je deelt met GAIMS en hoe gedetailleerd jouw vragen zijn.</li><li><b>Transparantie:</b> Je hebt recht op openheid over wat GAIMS doet en hoe resultaten worden gegenereerd.</li><li><b>Recht op inzage, verwijdering en overdracht:</b> Je hebt zelf inzicht in de manier waarop je GAIMS gebruikt en welke vragen je hebt gesteld. Dit kun je eventueel verwijderen of exporteren.</li></ul><div class=\"text-sm mb-2\" style=\"color: #6b7280;\">De andere rechten uit de AVG zijn niet van toepassing op GAIMS. Als je hier vragen over hebt, neem dan contact op met de A.I. Specialist of de Privacy Officer.</div>"
-                }
-            ]
-        },
-        {
-            "id": "sec5",
-            "emoji": "\uD83D\uDC41\uFE0F",
-            "title": "Wat kan de beheerder zien?",
-            "content": "<h2 class=\"ho-chapter-title\">Wat kan de beheerder zien?</h2>",
-            "items": [
-                {
-                    "id": "sec5a",
-                    "emoji": "\uD83D\uDD27",
-                    "title": "Beheerdersinzage",
-                    "content": "<div class=\"text-sm mb-2\">Om te zorgen dat GAIMS goed en betrouwbaar blijft functioneren, heeft de beheerder een beperkte vorm van inzage. Dit gebeurt zorgvuldig en op een verantwoorde manier, met het oog op privacy en informatieveiligheid:</div><ul class=\"list-disc pl-5 space-y-2 text-sm mb-2\"><li><b>Technisch toezicht:</b> De beheerder houdt toezicht op de technische werking van GAIMS, zodat storingen en fouten in de antwoorden van GAIMS kunnen worden voorkomen of opgelost.</li><li><b>Monitoring van generieke patronen:</b> De beheerder bekijkt vragen en uitkomsten op geanonimiseerde wijze om ervoor te zorgen dat GAIMS goed, precies, begrijpelijk en passend blijft reageren.</li><li><b>Foutcorrectie en feedbackverwerking:</b> Wanneer gebruikers in de chat aangeven of een antwoord juist of onjuist was, wordt deze feedback gebruikt om de antwoorden die GAIMS geeft te verbeteren.</li></ul>"
+                    "content": "<ul class=\"list-disc pl-5 space-y-2 text-sm mb-2\"><li><b>Gegevensbeveiliging:</b> Jouw gesprekken en data blijven volledig intern binnen jouw organisatie.</li><li><b>Controle over input:</b> Je bepaalt zelf wat je deelt en hoe gedetailleerd jouw vragen zijn.</li><li><b>Transparantie:</b> Je hebt recht op openheid over wat {{APP_NAME}} doet en hoe resultaten worden gegenereerd.</li><li><b>Recht op inzage en verwijdering:</b> Je hebt inzicht in jouw gebruik en kunt gesprekken verwijderen of exporteren.</li></ul>"
                 }
             ]
         }
