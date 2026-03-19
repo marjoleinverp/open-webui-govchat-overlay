@@ -15,21 +15,38 @@ Ontwikkeld als onderdeel van [GovChat-NL](https://govchat-nl.nl), het open-sourc
 
 ## Architectuur
 
+Elke gemeente draait twee containers:
+
+1. **`ghcr.io/open-webui/open-webui:<versie>`** — het officiële Open WebUI image, versie naar keuze
+2. **`ghcr.io/.../govchat-overlay-admin:latest`** — publiceert alle overlay-bestanden
+
+Communicatie verloopt via een **shared Docker volume**:
+
 ```
-┌─────────────────┐    /static/*.js,css,json   ┌──────────────────┐
-│   Open WebUI     │  ←── shared volume ──────  │  govchat-admin   │
-│   (main app)     │                            │  (Node.js/Express)│
-└─────────────────┘                            │                  │
-                                               │  :3001/dashboard │
-                    ┌────────────┐  login +     │  Admin UI (NL)   │
-                    │  Beheerder │────edit────→ │                  │
-                    └────────────┘              └──────────────────┘
+┌─────────────────────┐                        ┌──────────────────┐
+│   Open WebUI         │  ← shared volume ──   │  govchat-admin   │
+│   (officieel image)  │   /app/backend/static  │  (Node.js/Express)│
+│                      │                        │                  │
+│   Serveert:          │                        │  Publiceert:     │
+│   loader.js          │                        │  loader.js       │
+│   custom.css         │                        │  custom.css      │
+│   help-content.json  │                        │  help-content.json│
+│   apps.json          │                        │  apps.json       │
+└─────────────────────┘                        └──────────────────┘
                                                        │
                                                 ┌──────┴──────┐
-                                                │  Volume:     │
-                                                │  JSON config │
+                                                │  Beheerder   │
+                                                │  :3002       │
+                                                │  Admin UI    │
                                                 └─────────────┘
 ```
+
+**Startup-volgorde:**
+1. Open WebUI start → kopieert eigen defaults naar STATIC_DIR
+2. Admin container start → publiceert overlay-bestanden naar hetzelfde volume (overschrijft defaults)
+3. Browsers laden de overlay via `/static/loader.js`
+
+**Er is geen custom Docker image meer nodig.** Gemeentes kiezen zelf hun Open WebUI versie.
 
 ## Snel starten
 
@@ -39,12 +56,12 @@ git clone https://github.com/MarjoleinVerP/open-webui-govchat-overlay.git
 cd open-webui-govchat-overlay
 
 # Start met docker compose (productie-voorbeeld met alle services)
-GOVCHAT_ADMIN_PASSWORD=mijnwachtwoord docker compose -f docker-compose.govchat.yaml up -d --build
+GOVCHAT_ADMIN_PASSWORD=mijnwachtwoord docker compose -f docker-compose.govchat.yaml up -d
 ```
 
 Open daarna:
 - **Open WebUI**: http://localhost:3000
-- **Admin Panel**: http://localhost:3001
+- **Admin Panel**: http://localhost:3002
 
 ## Bestanden
 
@@ -54,9 +71,8 @@ open-webui-help-overlay/
 ├── custom.css                    # Alle styling (dark mode, responsive)
 ├── help-content.json             # Standaard handleiding (fallback)
 ├── apps.json                     # Standaard apps config (fallback)
-├── Dockerfile                    # Open WebUI + overlay bestanden
-├── docker-compose.yaml           # Basis compose config
-├── docker-compose.govchat.yaml    # Productie config (volledig voorbeeld)
+├── docker-compose.yaml           # Basis compose (ontwikkeling)
+├── docker-compose.govchat.yaml   # Productie config (volledig voorbeeld)
 └── admin/
     ├── Dockerfile                # Admin panel image (node:20-alpine)
     ├── package.json
@@ -68,7 +84,9 @@ open-webui-help-overlay/
     │   └── apps-editor.html      # Apps configuratie
     └── defaults/
         ├── help-content.json     # Standaard handleiding
-        └── apps.json             # Standaard apps config
+        ├── apps.json             # Standaard apps config
+        ├── loader.js             # Standaard overlay loader
+        └── custom.css            # Standaard overlay styling
 ```
 
 ## Admin Panel
@@ -107,19 +125,20 @@ Beveiligd met een wachtwoord via de `GOVCHAT_ADMIN_PASSWORD` environment variabl
 
 ## Updaten naar nieuwe Open WebUI versie
 
-Pas de tag aan in de `Dockerfile`:
+Pas de image tag aan in je `docker-compose.govchat.yaml`:
 
-```dockerfile
-FROM ghcr.io/open-webui/open-webui:v0.6.x
+```yaml
+open-webui:
+  image: ghcr.io/open-webui/open-webui:v0.9.0   # nieuwe versie
 ```
 
-Herbouw:
+Herstart:
 
 ```bash
-docker compose up -d --build
+docker compose -f docker-compose.govchat.yaml up -d
 ```
 
-De overlay-bestanden blijven intact — ze raken de Open WebUI broncode niet.
+De overlay-bestanden worden automatisch opnieuw gepubliceerd door de admin container. Er hoeft geen image herbouwd te worden.
 
 ---
 

@@ -38,7 +38,7 @@ function ensureDataDir() {
 
 function initDefaults() {
   ensureDataDir();
-  const defaults = ["help-content.json", "apps.json"];
+  const defaults = ["help-content.json", "apps.json", "loader.js", "custom.css"];
   for (const file of defaults) {
     const target = path.join(DATA_DIR, file);
     if (!fs.existsSync(target)) {
@@ -78,11 +78,30 @@ function publishFile(filename, data) {
   }
 }
 
+function publishFileRaw(filename) {
+  try {
+    if (!fs.existsSync(PUBLISH_DIR)) {
+      fs.mkdirSync(PUBLISH_DIR, { recursive: true });
+    }
+    const source = path.join(DATA_DIR, filename);
+    if (!fs.existsSync(source)) return;
+    const target = path.join(PUBLISH_DIR, filename);
+    fs.copyFileSync(source, target);
+    console.log(`[publish] ${filename} → ${PUBLISH_DIR}`);
+  } catch (err) {
+    console.warn(`[publish] Failed to publish ${filename}: ${err.message}`);
+  }
+}
+
 function publishAll() {
-  const files = ["help-content.json", "apps.json"];
-  for (const file of files) {
+  const jsonFiles = ["help-content.json", "apps.json"];
+  for (const file of jsonFiles) {
     const data = readJSON(file);
     if (data) publishFile(file, data);
+  }
+  const rawFiles = ["loader.js", "custom.css"];
+  for (const file of rawFiles) {
+    publishFileRaw(file);
   }
 }
 
